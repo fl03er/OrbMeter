@@ -35,8 +35,11 @@ extension NSImage {
         return nsImage
     }
 
+    /// Runner frames fill the full 22pt status item height.
+    public static let runnerHeight: CGFloat = 22.0
+
     public func normalize() {
-        let scale = size.height / 18.0
+        let scale = size.height / Self.runnerHeight
         size = CGSize(width: size.width / scale, height: size.height / scale)
     }
 

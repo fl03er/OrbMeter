@@ -27,11 +27,10 @@ struct SystemInfoView<Accessory: View>: View {
     @ViewBuilder var accessory: () -> Accessory
 
     var body: some View {
-        HStack(alignment: .center, spacing: 16) {
-            Image(systemName: systemInfo.icon)
-                .resizable()
-                .scaledToFit()
-                .frame(width: 24, height: 24)
+        HStack(alignment: .center, spacing: 12) {
+            LiveMetricFigure(kind: systemInfo.figureKind, value: systemInfo.figureValue, aux: systemInfo.figureAux)
+                .frame(width: 80, height: 64)
+                .accessibilityLabel(Text(verbatim: systemInfo.summary))
             VStack(alignment: .leading, spacing: 2) {
                 Text(verbatim: systemInfo.summary)
                 Group {
@@ -47,6 +46,5 @@ struct SystemInfoView<Accessory: View>: View {
             }
         }
         .fixedSize()
-        .padding(.leading, 8)
     }
 }

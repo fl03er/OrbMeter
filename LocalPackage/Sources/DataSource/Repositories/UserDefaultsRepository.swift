@@ -24,7 +24,7 @@ public struct UserDefaultsRepository: Sendable {
     private var userDefaultsClient: UserDefaultsClient
 
     public var runnerID: Runner.ID {
-        get { userDefaultsClient.string(.runnerID) ?? RunnerKind.cat.id }
+        get { userDefaultsClient.string(.runnerID) ?? RunnerKind.working.id }
         nonmutating set { userDefaultsClient.set(newValue, .runnerID) }
     }
 
@@ -105,7 +105,7 @@ public struct UserDefaultsRepository: Sendable {
             userDefaultsClient.removePersistentDomain(Bundle.main.bundleIdentifier!)
         }
         userDefaultsClient.register([
-            .runnerID: RunnerKind.cat.id,
+            .runnerID: RunnerKind.working.id,
             .speedDecreasesUnderLoad: false,
             .isFlippedHorizontally: false,
             .updateInterval: UpdateInterval.default.rawValue,

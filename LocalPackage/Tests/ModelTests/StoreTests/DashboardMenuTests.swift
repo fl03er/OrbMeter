@@ -11,20 +11,20 @@ struct DashboardMenuTests {
     func send_viewAppeared_loads_current_runner_and_runner_bundle_list_then_observes_streams() async {
         let appState = AllocatedUnfairLock<AppState>(initialState: .init())
         appState.withLock {
-            $0.runnerBundles.send(RunnerBundle(runner: .default, frame: .preset("cat-frame-0")))
-            $0.runnerBundleLists.send([RunnerBundle(runner: .default, frame: .preset("cat-frame-0"))])
+            $0.runnerBundles.send(RunnerBundle(runner: .default, frame: .preset("working-frame-0")))
+            $0.runnerBundleLists.send([RunnerBundle(runner: .default, frame: .preset("working-frame-0"))])
         }
         let sut = DashboardMenu(.testDependencies(appStateClient: .testDependency(appState)))
         await sut.send(.viewAppeared)
         #expect(sut.currentRunner == Runner.default)
         #expect(sut.runnerBundleList.map(\.runner) == [Runner.default])
         appState.withLock {
-            $0.runnerBundles.send(RunnerBundle(runner: Runner(kind: .dog), frame: .preset("dog-frame-0")))
-            $0.runnerBundleLists.send([RunnerBundle(runner: Runner(kind: .dog), frame: .preset("dog-frame-0"))])
+            $0.runnerBundles.send(RunnerBundle(runner: Runner(kind: .searching), frame: .preset("searching-frame-0")))
+            $0.runnerBundleLists.send([RunnerBundle(runner: Runner(kind: .searching), frame: .preset("searching-frame-0"))])
         }
-        await waitUntil { sut.currentRunner == Runner(kind: .dog) }
-        #expect(sut.currentRunner == Runner(kind: .dog))
-        #expect(sut.runnerBundleList.map(\.runner) == [Runner(kind: .dog)])
+        await waitUntil { sut.currentRunner == Runner(kind: .searching) }
+        #expect(sut.currentRunner == Runner(kind: .searching))
+        #expect(sut.runnerBundleList.map(\.runner) == [Runner(kind: .searching)])
         await sut.send(.viewDisappeared)
     }
 
@@ -35,7 +35,7 @@ struct DashboardMenuTests {
         await sut.send(.viewAppeared)
         await sut.send(.viewDisappeared)
         appState.withLock {
-            $0.runnerBundles.send(RunnerBundle(runner: .default, frame: .preset("cat-frame-0")))
+            $0.runnerBundles.send(RunnerBundle(runner: .default, frame: .preset("working-frame-0")))
         }
         try? await Task.sleep(for: .milliseconds(50))
         #expect(sut.currentRunner == nil)
@@ -45,9 +45,9 @@ struct DashboardMenuTests {
     func send_runnerKindPickerSelected_updates_current_runner() async {
         let appState = AllocatedUnfairLock<AppState>(initialState: .init())
         let sut = DashboardMenu(.testDependencies(appStateClient: .testDependency(appState)))
-        await sut.send(.runnerKindPickerSelected(Runner(kind: .dog)))
-        #expect(sut.currentRunner == Runner(kind: .dog))
-        #expect(appState.withLock(\.runnerBundles.latestValue)?.runner == Runner(kind: .dog))
+        await sut.send(.runnerKindPickerSelected(Runner(kind: .searching)))
+        #expect(sut.currentRunner == Runner(kind: .searching))
+        #expect(appState.withLock(\.runnerBundles.latestValue)?.runner == Runner(kind: .searching))
     }
 
     @MainActor @Test
@@ -154,7 +154,7 @@ struct DashboardMenuTests {
         ))
         await sut.send(.reportIssueButtonTapped)
         #expect(callStack.withLock(\.self) == [
-            "open: https://github.com/runcat-dev/RunCatNeo/issues",
+            "open: https://github.com/fl03er/OrbMeter/issues",
         ])
     }
 

@@ -39,7 +39,8 @@ public struct Runner: Sendable, Hashable, Identifiable {
 
     public init(kind: RunnerKind) {
         id = kind.id
-        isTemplate = true
+        // Orb frames carry their own palette, so they render in color rather than as menu bar templates.
+        isTemplate = false
         frameOrder = kind.frameOrder
         source = .builtIn(kind)
     }
@@ -54,7 +55,7 @@ public struct Runner: Sendable, Hashable, Identifiable {
         }
     }
 
-    public static let `default` = Runner(kind: .cat)
+    public static let `default` = Runner(kind: .working)
 
     public static func ==(lhs: Runner, rhs: Runner) -> Bool {
         lhs.id == rhs.id

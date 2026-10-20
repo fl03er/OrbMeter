@@ -23,22 +23,24 @@ import DataSource
 extension RunnerKind {
     var localizedName: String {
         switch self {
-        case .cat:
-            String(localized: "cat", table: "RunnerNames", bundle: .module)
-        case .dog:
-            String(localized: "dog", table: "RunnerNames", bundle: .module)
-        case .slime:
-            String(localized: "slime", table: "RunnerNames", bundle: .module)
-        case .drop:
-            String(localized: "drop", table: "RunnerNames", bundle: .module)
-        case .coffee:
-            String(localized: "coffee", table: "RunnerNames", bundle: .module)
-        case .newtonCradle:
-            String(localized: "newtonCradle", table: "RunnerNames", bundle: .module)
-        case .engine:
-            String(localized: "engine", table: "RunnerNames", bundle: .module)
-        case .mochi:
-            String(localized: "mochi", table: "RunnerNames", bundle: .module)
+        case .working:
+            String(localized: "working", table: "RunnerNames", bundle: .module)
+        case .searching:
+            String(localized: "searching", table: "RunnerNames", bundle: .module)
+        case .solving:
+            String(localized: "solving", table: "RunnerNames", bundle: .module)
+        case .listening:
+            String(localized: "listening", table: "RunnerNames", bundle: .module)
+        case .connecting:
+            String(localized: "connecting", table: "RunnerNames", bundle: .module)
+        case .weaving:
+            String(localized: "weaving", table: "RunnerNames", bundle: .module)
+        case .composing:
+            String(localized: "composing", table: "RunnerNames", bundle: .module)
+        case .breathing:
+            String(localized: "breathing", table: "RunnerNames", bundle: .module)
+        case .shaping:
+            String(localized: "shaping", table: "RunnerNames", bundle: .module)
         }
     }
 }

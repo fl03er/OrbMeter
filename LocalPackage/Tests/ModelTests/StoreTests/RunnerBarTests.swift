@@ -11,7 +11,7 @@ struct RunnerBarTests {
         RunnerBar.Action.EventBridge(
             getBundleImage: { name in
                 callStack.withLock { $0.append("getBundleImage: \(name)") }
-                return NSImage(size: CGSize(width: 10, height: 18))
+                return NSImage(size: CGSize(width: 10, height: 22))
             },
             setSize: { size in
                 callStack.withLock { $0.append("setSize: \(size.width)x\(size.height)") }
@@ -32,7 +32,7 @@ struct RunnerBarTests {
         appState.withLock {
             $0.runnerBundles.send(RunnerBundle(
                 runner: .default,
-                frames: [.preset("cat-frame-0"), .preset("cat-frame-1")]
+                frames: [.preset("working-frame-0"), .preset("working-frame-1")]
             ))
         }
         let callStack = AllocatedUnfairLock<[String]>(initialState: [])
@@ -40,13 +40,13 @@ struct RunnerBarTests {
         await sut.send(.viewAppeared("RunnerBarTests", makeEventBridge(recording: callStack)))
         await waitUntil { callStack.withLock(\.self).count >= 4 }
         #expect(sut.isReady)
-        #expect(sut.size == CGSize(width: 10, height: 18))
-        #expect(sut.isTemplate)
+        #expect(sut.size == CGSize(width: 10, height: 22))
+        #expect(!sut.isTemplate)
         #expect(callStack.withLock(\.self) == [
-            "getBundleImage: cat-frame-0",
-            "getBundleImage: cat-frame-1",
-            "setSize: 10.0x18.0",
-            "setFrames: 2, true",
+            "getBundleImage: working-frame-0",
+            "getBundleImage: working-frame-1",
+            "setSize: 10.0x22.0",
+            "setFrames: 2, false",
         ])
         await sut.send(.viewDisappeared)
     }
@@ -67,7 +67,7 @@ struct RunnerBarTests {
     func send_viewAppeared_ignores_thumbnail_bundle() async {
         let appState = AllocatedUnfairLock<AppState>(initialState: .init())
         appState.withLock {
-            $0.runnerBundles.send(RunnerBundle(runner: .default, frame: .preset("cat-frame-0")))
+            $0.runnerBundles.send(RunnerBundle(runner: .default, frame: .preset("working-frame-0")))
         }
         let callStack = AllocatedUnfairLock<[String]>(initialState: [])
         let sut = RunnerBar(.testDependencies(appStateClient: .testDependency(appState)))
@@ -92,7 +92,7 @@ struct RunnerBarTests {
         #expect(sut.size == .zero)
         #expect(callStack.withLock(\.self) == [
             "setSize: 0.0x0.0",
-            "setFrames: 0, true",
+            "setFrames: 0, false",
         ])
         await sut.send(.viewDisappeared)
     }

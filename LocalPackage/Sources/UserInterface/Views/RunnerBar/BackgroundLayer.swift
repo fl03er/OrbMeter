@@ -23,9 +23,11 @@ import CoreImage.CIFilterBuiltins
 
 final class BackgroundLayer: CALayer {
     private var gap: CGFloat
+    private var barHeight: CGFloat
 
-    init(gap: CGFloat) {
+    init(gap: CGFloat, barHeight: CGFloat) {
         self.gap = gap
+        self.barHeight = barHeight
         super.init()
         contentsGravity = CALayerContentsGravity.left
         masksToBounds = true
@@ -43,7 +45,7 @@ final class BackgroundLayer: CALayer {
     func setSize(_ size: CGSize) {
         CATransaction.begin()
         CATransaction.setDisableActions(true)
-        frame = CGRect(origin: CGPoint(x: gap, y: 2.0), size: size)
+        frame = CGRect(origin: CGPoint(x: gap, y: max(0, 0.5 * (barHeight - size.height))), size: size)
         CATransaction.commit()
     }
 }

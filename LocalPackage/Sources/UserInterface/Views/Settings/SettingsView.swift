@@ -42,7 +42,7 @@ struct SettingsView: View {
                     Label {
                         Text("runnerTab", bundle: .module)
                     } icon: {
-                        Image(.runcat)
+                        Image(systemName: "circle.dotted")
                     }
                 }
                 .tag(SettingsTab.runner)
@@ -55,15 +55,6 @@ struct SettingsView: View {
                     }
                 }
                 .tag(SettingsTab.metrics)
-            DonationSettingsView(store: .init(appDependencies))
-                .tabItem {
-                    Label {
-                        Text("donationTab", bundle: .module)
-                    } icon: {
-                        Image(systemName: "mug")
-                    }
-                }
-                .tag(SettingsTab.donation)
         }
         .fixedSize()
         .accessibilityIdentifier("settings")

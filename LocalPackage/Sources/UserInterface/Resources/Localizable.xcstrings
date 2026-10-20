@@ -2582,61 +2582,61 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "RunCat Neo beim Anmelden automatisch starten"
+            "value" : "OrbMeter beim Anmelden automatisch starten"
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Launch RunCat Neo automatically at login"
+            "value" : "Launch OrbMeter automatically at login"
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Abrir RunCat Neo automáticamente al iniciar sesión"
+            "value" : "Abrir OrbMeter automáticamente al iniciar sesión"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Lancer RunCat Neo automatiquement à l’ouverture de session"
+            "value" : "Lancer OrbMeter automatiquement à l’ouverture de session"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ログイン時に自動でRunCat Neoを起動"
+            "value" : "ログイン時に自動でOrbMeterを起動"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "로그인 시 RunCat Neo 자동 실행"
+            "value" : "로그인 시 OrbMeter 자동 실행"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Автоматически запускать RunCat Neo при входе"
+            "value" : "Автоматически запускать OrbMeter при входе"
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tự động khởi chạy RunCat Neo khi đăng nhập"
+            "value" : "Tự động khởi chạy OrbMeter khi đăng nhập"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "登录时自动启动 RunCat Neo"
+            "value" : "登录时自动启动 OrbMeter"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "登入時自動啟動 RunCat Neo"
+            "value" : "登入時自動啟動 OrbMeter"
           }
         }
       }
@@ -3572,61 +3572,61 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "RunCat Neo ist Open-Source-Software."
+            "value" : "OrbMeter ist Open-Source-Software."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "RunCat Neo is an open-source software."
+            "value" : "OrbMeter is an open-source software."
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "RunCat Neo es un software de código abierto."
+            "value" : "OrbMeter es un software de código abierto."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "RunCat Neo est un logiciel open source."
+            "value" : "OrbMeter est un logiciel open source."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "RunCat Neoはオープンソースソフトウェアです。"
+            "value" : "OrbMeterはオープンソースソフトウェアです。"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "RunCat Neo는 오픈 소스 소프트웨어입니다."
+            "value" : "OrbMeter는 오픈 소스 소프트웨어입니다."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "RunCat Neo — программное обеспечение с открытым исходным кодом."
+            "value" : "OrbMeter — программное обеспечение с открытым исходным кодом."
           }
         },
         "vi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "RunCat Neo là phần mềm mã nguồn mở."
+            "value" : "OrbMeter là phần mềm mã nguồn mở."
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "RunCat Neo 是开源软件。"
+            "value" : "OrbMeter 是开源软件。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "RunCat Neo 是開放原始碼軟體。"
+            "value" : "OrbMeter 是開放原始碼軟體。"
           }
         }
       }

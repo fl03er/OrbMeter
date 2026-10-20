@@ -34,7 +34,7 @@ struct RunnerSettingsTests {
     @MainActor @Test
     func send_flipHorizontallyToggleSwitched_persists_and_resends_current_bundle() async {
         let appState = AllocatedUnfairLock<AppState>(initialState: .init())
-        let bundle = RunnerBundle(runner: .default, frame: .preset("cat-frame-0"))
+        let bundle = RunnerBundle(runner: .default, frame: .preset("working-frame-0"))
         appState.withLock { $0.runnerBundles.send(bundle) }
         let recorder = makeSetRecorder()
         let sut = RunnerSettings(.testDependencies(

@@ -1,0 +1,12 @@
+{
+  "name": "orbmeter-frames",
+  "private": true,
+  "type": "module",
+  "description": "Renders thinking-orbs states into OrbMeter's menu bar frames",
+  "scripts": {
+    "render": "node render.mjs node_modules/thinking-orbs/dist out"
+  },
+  "dependencies": {
+    "thinking-orbs": "0.3.2"
+  }
+}

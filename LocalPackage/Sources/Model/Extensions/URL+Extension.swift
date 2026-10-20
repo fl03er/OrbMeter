@@ -22,7 +22,7 @@ import Foundation
 
 extension URL {
     public static let github = URL(
-        string: "https://github.com/runcat-dev/RunCatNeo"
+        string: "https://github.com/fl03er/OrbMeter"
     )!
 
     public static var githubIssues: URL {

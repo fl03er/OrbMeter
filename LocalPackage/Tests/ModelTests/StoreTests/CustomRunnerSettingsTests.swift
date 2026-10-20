@@ -16,7 +16,7 @@ struct CustomRunnerSettingsTests {
         let customBundle = RunnerBundle(runner: customRunner, frame: .custom(Data()))
         appState.withLock {
             $0.runnerBundleLists.send([
-                RunnerBundle(runner: .default, frame: .preset("cat-frame-0")),
+                RunnerBundle(runner: .default, frame: .preset("working-frame-0")),
                 customBundle,
             ])
         }
@@ -44,7 +44,7 @@ struct CustomRunnerSettingsTests {
     func send_deleteButtonTapped_removes_selected_runner() async {
         let appState = AllocatedUnfairLock<AppState>(initialState: .init())
         appState.withLock {
-            $0.runnerBundles.send(RunnerBundle(runner: .default, frame: .preset("cat-frame-0")))
+            $0.runnerBundles.send(RunnerBundle(runner: .default, frame: .preset("working-frame-0")))
         }
         let sut = CustomRunnerSettings(
             .testDependencies(appStateClient: .testDependency(appState)),

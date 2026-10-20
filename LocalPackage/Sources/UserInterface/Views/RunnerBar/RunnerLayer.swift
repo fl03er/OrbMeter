@@ -22,12 +22,14 @@ import AppKit
 
 final class RunnerLayer: CALayer {
     private var gap: CGFloat
+    private var barHeight: CGFloat
     private var width = CGFloat.zero
     private let maskLayer = CALayer()
     private var keyFrameAnimation = CAKeyframeAnimation(keyPath: "contents")
 
-    init(gap: CGFloat) {
+    init(gap: CGFloat, barHeight: CGFloat) {
         self.gap = gap
+        self.barHeight = barHeight
         super.init()
         contentsGravity = CALayerContentsGravity.left
         masksToBounds = true
@@ -50,7 +52,7 @@ final class RunnerLayer: CALayer {
         CATransaction.setDisableActions(true)
         removeAllAnimations()
         maskLayer.removeAllAnimations()
-        frame = CGRect(origin: CGPoint(x: gap, y: 2.0), size: size)
+        frame = CGRect(origin: CGPoint(x: gap, y: max(0, 0.5 * (barHeight - size.height))), size: size)
         maskLayer.frame = CGRect(origin: .zero, size: size)
         if isTemplate {
             if mask == nil {

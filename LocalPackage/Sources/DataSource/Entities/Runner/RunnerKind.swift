@@ -19,41 +19,33 @@
  */
 
 public enum RunnerKind: String, Sendable, Identifiable, CaseIterable {
-    case cat = "cat"
-    case dog = "dog"
-    case slime = "slime"
-    case drop = "drop"
-    case coffee = "coffee"
-    case newtonCradle = "newton-cradle"
-    case engine = "engine"
-    case mochi = "mochi"
+    case working = "working"
+    case searching = "searching"
+    case solving = "solving"
+    case listening = "listening"
+    case connecting = "connecting"
+    case weaving = "weaving"
+    case composing = "composing"
+    case breathing = "breathing"
+    case shaping = "shaping"
 
     public var id: String { rawValue }
 
     var numberOfResources: Int {
         switch self {
-        case .cat: 5
-        case .dog: 5
-        case .slime: 5
-        case .drop: 5
-        case .coffee: 10
-        case .newtonCradle: 5
-        case .engine: 10
-        case .mochi: 5
+        case .working: 16
+        case .searching: 16
+        case .solving: 47
+        case .listening: 17
+        case .connecting: 23
+        case .weaving: 34
+        case .composing: 29
+        case .breathing: 24
+        case .shaping: 52
         }
     }
 
     var frameOrder: FrameOrder {
-        let n = numberOfResources
-        return switch self {
-        case .cat: .ascending(n)
-        case .dog: .ascending(n)
-        case .slime: .partyHorn
-        case .drop: .ascending(n)
-        case .coffee: .ascending(n)
-        case .newtonCradle: .pendulum
-        case .engine: .ascending(n)
-        case .mochi: .swing
-        }
+        .ascending(numberOfResources)
     }
 }

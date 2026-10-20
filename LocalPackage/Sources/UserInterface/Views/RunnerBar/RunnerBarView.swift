@@ -63,11 +63,12 @@ struct RunnerBarView: View {
             statusBarButton.tag = .zero
             let gap = 0.5 * statusBarButton.bounds.width
             statusBarButton.wantsLayer = true
-            let backgroundLayer = BackgroundLayer(gap: gap)
+            let barHeight = statusBarButton.bounds.height
+            let backgroundLayer = BackgroundLayer(gap: gap, barHeight: barHeight)
 #if arch(arm64)
             statusBarButton.layer?.addSublayer(backgroundLayer)
 #endif
-            let runnerLayer = RunnerLayer(gap: gap)
+            let runnerLayer = RunnerLayer(gap: gap, barHeight: barHeight)
             statusBarButton.layer?.addSublayer(runnerLayer)
             StatusBarAppearanceBridge.shared.send(window.effectiveAppearance)
             await store.send(.viewAppeared(

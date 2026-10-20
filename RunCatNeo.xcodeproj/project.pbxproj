@@ -317,19 +317,19 @@
 				ENABLE_USER_SELECTED_FILES = readwrite;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RunCatNeo/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "RunCat Neo";
+				INFOPLIST_KEY_CFBundleDisplayName = OrbMeter;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_MetalCaptureEnabled = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "©︎2026 Takuto Nakamura";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "©︎2026 Takuto Nakamura, fl03er";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kyome.Neo.RunCat;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fl03er.OrbMeter;
+				PRODUCT_NAME = OrbMeter;
 				REGISTER_APP_GROUPS = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -366,19 +366,19 @@
 				ENABLE_USER_SELECTED_FILES = readwrite;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = RunCatNeo/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "RunCat Neo";
+				INFOPLIST_KEY_CFBundleDisplayName = OrbMeter;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_MetalCaptureEnabled = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "©︎2026 Takuto Nakamura";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "©︎2026 Takuto Nakamura, fl03er";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.kyome.Neo.RunCat;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fl03er.OrbMeter;
+				PRODUCT_NAME = OrbMeter;
 				REGISTER_APP_GROUPS = YES;
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
