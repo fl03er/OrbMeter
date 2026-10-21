@@ -1,5 +1,13 @@
 # OrbMeter
 
+
+
+https://github.com/user-attachments/assets/6c10e8dc-9ee9-4b24-a2b8-0c9899626e24
+
+
+
+
+
 A living CPU meter for the Mac menu bar. A glowing orb of colored dots spins faster as your CPU works harder, so you can feel the load from the corner of your eye without reading a number. Click it for a dashboard with CPU, memory, storage, battery and network, each drawn as a small isometric hardware render that lights up and moves with its number.
 
 **English** · [한국어](README.ko.md)
